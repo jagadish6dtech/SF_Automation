@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.10.4 on win32)" generated="20220623 15:20:11.080" rpa="false" schemaversion="3">
+<suite id="s1" name="CRM TC 001" source="C:\Users\abhishek.jayalal\Desktop\Wakanda\20-06-2022\wkd_auto-20-06-2022\TestCases\CRM_TC_001.robot">
+<test id="s1-t1" name="TEST CASE 001" line="32">
+<kw name="Execute Suite Setup as User" library="Common" type="SETUP">
+<doc>Open Browser on Test or preproduction environment</doc>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${Broswer}</arg>
+<arg>${TestData}[Browser]</arg>
+<arg>options=add_argument("--ignore-certificate-errors")</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220623 15:20:12.219" level="INFO">Opening browser 'chrome' to base url 'https://keycloak.impl.10.0.14.241.nip.io/auth/realms/Safaricom/account/applications'.</msg>
+<msg timestamp="20220623 15:20:57.090" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-534.png"&gt;&lt;img src="selenium-screenshot-534.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220623 15:20:57.091" level="FAIL">WebDriverException: Message: unknown error: net::ERR_CONNECTION_TIMED_OUT
+  (Session info: chrome=102.0.5005.115)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x006EB8F3+2406643]
+	Ordinal0 [0x0067AF31+1945393]
+	Ordinal0 [0x0056C748+837448]
+	Ordinal0 [0x00568EE8+823016]
+	Ordinal0 [0x0055E0BD+778429]
+	Ordinal0 [0x0055EC9A+781466]
+	Ordinal0 [0x0055E2CA+778954]
+	Ordinal0 [0x0055D8A6+776358]
+	Ordinal0 [0x0055C7C5+772037]
+	Ordinal0 [0x0055CC9D+773277]
+	Ordinal0 [0x0056DF4A+843594]
+	Ordinal0 [0x005C4D3D+1199421]
+	Ordinal0 [0x005B427C+1131132]
+	Ordinal0 [0x005C4682+1197698]
+	Ordinal0 [0x005B4096+1130646]
+	Ordinal0 [0x0058E636+976438]
+	Ordinal0 [0x0058F546+980294]
+	GetHandleVerifier [0x00959612+2498066]
+	GetHandleVerifier [0x0094C920+2445600]
+	GetHandleVerifier [0x00784F2A+579370]
+	GetHandleVerifier [0x00783D36+574774]
+	Ordinal0 [0x00681C0B+1973259]
+	Ordinal0 [0x00686688+1992328]
+	Ordinal0 [0x00686775+1992565]
+	Ordinal0 [0x0068F8D1+2029777]
+	BaseThreadInitThunk [0x766FFA29+25]
+	RtlGetAppContainerNamedObjectPath [0x779B7A9E+286]
+	RtlGetAppContainerNamedObjectPath [0x779B7A6E+238]
+</msg>
+<status status="FAIL" starttime="20220623 15:20:12.219" endtime="20220623 15:20:57.112"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="NOT RUN" starttime="20220623 15:20:57.112" endtime="20220623 15:20:57.112"/>
+</kw>
+<status status="FAIL" starttime="20220623 15:20:12.218" endtime="20220623 15:20:57.113"/>
+</kw>
+<kw name="Execute Suite Teardown" library="Common" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${present}</var>
+<arg>Variable Should Exist</arg>
+<arg>${download directory}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Variable Should Exist" library="BuiltIn">
+<arg>${download directory}</arg>
+<doc>Fails unless the given variable exists within the current scope.</doc>
+<msg timestamp="20220623 15:20:57.116" level="FAIL">Variable '${download directory}' does not exist.</msg>
+<status status="FAIL" starttime="20220623 15:20:57.114" endtime="20220623 15:20:57.118"/>
+</kw>
+<msg timestamp="20220623 15:20:57.118" level="INFO">${present} = False</msg>
+<status status="PASS" starttime="20220623 15:20:57.114" endtime="20220623 15:20:57.118"/>
+</kw>
+<if>
+<branch type="IF" condition="${present}">
+<kw name="Empty Directory" library="OperatingSystem">
+<arg>${download directory}</arg>
+<doc>Deletes all the content from the given directory.</doc>
+<status status="NOT RUN" starttime="20220623 15:20:57.118" endtime="20220623 15:20:57.118"/>
+</kw>
+<kw name="Remove Directory" library="OperatingSystem">
+<arg>${download directory}</arg>
+<doc>Removes the directory pointed to by the given ``path``.</doc>
+<status status="NOT RUN" starttime="20220623 15:20:57.118" endtime="20220623 15:20:57.118"/>
+</kw>
+<status status="NOT RUN" starttime="20220623 15:20:57.118" endtime="20220623 15:20:57.118"/>
+</branch>
+<status status="PASS" starttime="20220623 15:20:57.118" endtime="20220623 15:20:57.118"/>
+</if>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220623 15:20:57.118" endtime="20220623 15:20:59.254"/>
+</kw>
+<kw name="Print" library="Common">
+<arg>finished =&gt; Execute Suite Teardown</arg>
+<kw name="Log To Console" library="BuiltIn">
+<arg>\n${message}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220623 15:20:59.256" endtime="20220623 15:20:59.257"/>
+</kw>
+<status status="PASS" starttime="20220623 15:20:59.255" endtime="20220623 15:20:59.257"/>
+</kw>
+<status status="PASS" starttime="20220623 15:20:57.113" endtime="20220623 15:20:59.258"/>
+</kw>
+<doc>Sample TestCase For Automation FrameWork</doc>
+<status status="FAIL" starttime="20220623 15:20:12.217" endtime="20220623 15:20:59.259">Setup failed:
+WebDriverException: Message: unknown error: net::ERR_CONNECTION_TIMED_OUT
+  (Session info: chrome=102.0.5005.115)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x006EB8F3+2406643]
+	Ordinal0 [0x0067AF31+1945393]
+	Ordinal0 [0x0056C748+837448]
+	Ordinal0 [0x00568EE8+823016]
+	Ordinal0 [0x0055E0BD+778429]
+	Ordinal0 [0x0055EC9A+781466]
+	Ordinal0 [0x0055E2CA+778954]
+	Ordinal0 [0x0055D8A6+776358]
+	Ordinal0 [0x0055C7C5+772037]
+	Ordinal0 [0x0055CC9D+773277]
+	Ordinal0 [0x0056DF4A+843594]
+	Ordinal0 [0x005C4D3D+1199421]
+	Ordinal0 [0x005B427C+1131132]
+	Ordinal0 [0x005C4682+1197698]
+	Ordinal0 [0x005B4096+1130646]
+	Ordinal0 [0x0058E636+976438]
+	Ordinal0 [0x0058F546+980294]
+	GetHandleVerifier [0x00959612+2498066]
+	GetHandleVerifier [0x0094C920+2445600]
+	GetHandleVerifier [0x00784F2A+579370]
+	GetHandleVerifier [0x00783D36+574774]
+	Ordinal0 [0x00681C0B+1973259]
+	Ordinal0 [0x00686688+1992328]
+	Ordinal0 [0x00686775+1992565]
+	Ordinal0 [0x0068F8D1+2029777]
+	BaseThreadInitThunk [0x766FFA29+25]
+	RtlGetAppContainerNamedObjectPath [0x779B7A9E+286]
+	RtlGetAppContainerNamedObjectPath [0x779B7A6E+238]
+</status>
+</test>
+<doc>Sample TestCase For Automation FrameWork</doc>
+<status status="FAIL" starttime="20220623 15:20:11.082" endtime="20220623 15:20:59.270"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="CRM TC 001">CRM TC 001</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
