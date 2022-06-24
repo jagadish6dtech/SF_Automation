@@ -41,11 +41,12 @@ TEST CASE 001
     #Manage Profile Residential Address one  TC_001  TD_01
     #Manage Profile Permanent Address One  TC_001  TD_01
 #-----------------------------------------------------------------------------------------------
+
+    Manage Profile Residential Address two  TC_001  TD_02
+    Manage Profile Permanent Address two  TC_001  TD_02
+    Edit Account Details two  TC_001  TD_01                         #SCREEN ISSUE - DATA SUBMISSION
+    Manage Account Address One  TC_001  TD_01
     Edit Profile Details two  TC_001  TD_01
-    #Manage Profile Residential Address two  TC_001  TD_02
-    #Manage Profile Permanent Address two  TC_001  TD_02
-    #Edit Account Details two  TC_001  TD_01                         #SCREEN ISSUE - DATA SUBMISSION
-    #Manage Account Address One  TC_001  TD_01
     #Create Ticket  TC_001  TD_01      #DROPDOWN ISSUE
     #View Identification Details  TC_001  TD_01
     #Filter Ticket By Status Open    TC_001  TD_01

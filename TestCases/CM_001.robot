@@ -33,37 +33,30 @@ TEST CASE 001
     [Documentation]     Sample TestCase For Automation FrameWork
     Login to SSO UI  ${CRM_CREDENTIAL}[username]  ${CRM_CREDENTIAL}[password]
     NAVIGATE SSO UI  ${CRM_UI}
-
-
-    #Edit Profile Details one  TC_001  TD_01
-    #Manage Account Address One  TC_001  TD_01
-    #Manage Service Address One  TC_001  TD_01
-    #Manage Profile Residential Address one  TC_001  TD_01
-    #Manage Profile Permanent Address One  TC_001  TD_01
 #-----------------------------------------------------------------------------------------------
 
-    #Manage Profile Residential Address two  TC_001  TD_02           #completed
-    Manage Profile Permanent Address two  TC_001  TD_02             #completed 1
-    Manage Service Address One  TC_001  TD_01                       #completed 1
-    #Edit Profile Details two  TC_001  TD_01                        Home page redirect issue
-    Edit Service Details two  TC_001  TD_01                         #completed 1
-    Edit Account Details two  TC_001  TD_01                         #completed 1
-    Manage Account Address One  TC_001  TD_01                       #completed 1
+    #Manage Profile Residential Address two  TC_001  TD_02           #completed 1
+    #Manage Profile Permanent Address two  TC_001  TD_02             #completed 1
+    #Manage Service Address One  TC_001  TD_01                       #completed 1
+    #Edit Profile Details two  TC_001  TD_01                        #Home page redirect issue
+    #Edit Service Details two  TC_001  TD_01                         #completed 1
+    #Edit Account Details two  TC_001  TD_01                         #completed 1
+    #Manage Account Address One  TC_001  TD_01                       #completed 1
 
     #Add Supplementary Offer  TC_001  TD_01                          #SCREEN ISSUE - DATA SUBMISSION
 
     #change SIM ID  TC_001  TD_01                                     #Vlidation failure
     #Create Ticket  TC_001  TD_01                                     #Address auto populate changed
-    Filter Ticket By Status Open    TC_001  TD_01                    #complete 1
-    View Identification Details  TC_001  TD_01                       #complete 1
+    #Filter Ticket By Status Open    TC_001  TD_01                    #complete
+    #View Identification Details  TC_001  TD_01     #complete        1
+    Filter Ticket By Status Open    TC_001  TD_01  #complete        1
 
-
-    Alter Account State   TC_001  TD_03                              #complete 1
+    #Alter Account State   TC_001  TD_03                              #complete
     #View Document Details  TC_002  TD_01                              # validation pending
     #Search Order By OrderId  TC_001  TD_01                           #close order screen pending
 
-    Suspend Supplementary Plan  TC_001  TD_01                        #completed 1
-    Update HLR Status  TC_001  TD_01
+    #Suspend Supplementary Plan  TC_001  TD_01
+    #Update HLR Status  TC_001  TD_01
     #change SIM ID  TC_001  TD_01
     #Sleep   10s
 

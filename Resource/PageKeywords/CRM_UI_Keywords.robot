@@ -117,6 +117,8 @@ Edit Profile Details two
     Set Input  ${ProfileDetailsPage}[ContactNumberInput]  ${contact}
     Set Input  ${ProfileDetailsPage}[AlternateContactInput]  ${alternate_Contact}
     Click Item  ${ProfileDetailsPage}[EditProfileSubmit]
+    #Click Item  //a//span[text()='Dashboard']
+    #Sleep  10s
     Go Back to Home Page
 
 
@@ -495,12 +497,14 @@ Filter Ticket By Status Open
     ${SERVICE_ID}=  getData  ${data}  SERVICE_ID
     ${STATUS}=  getData  ${data}  STATUS
     ${TICKET_ID}=  getData  ${data}  TICKET_ID
+    ${PRIORITY}=  getData  ${data}  PRIORITY
 
     Search By ID      ${HomePage}[HomeSeachOptionServiceId]  ${SERVICE_ID}
     Click Item        ${ServiceDetailsPage}[ViewTickets]
-    #Click Item        ${ServiceDetailsPage}[AdvanceSearchinViewTicket]
+    Click Item        ${ServiceDetailsPage}[AdvanceSearchinViewTicket]
     Set Input         ${ServiceDetailsPage}[InputTicketID]   ${TICKET_ID}
     Set Dropdown      ${ServiceDetailsPage}[ViewTicketStatusDropdown]   ${STATUS}
+    Set Dropdown      ${ServiceDetailsPage}[ViewTicketPriorityDropdown]   ${PRIORITY}
     Click Item        ${ServiceDetailsPage}[ViewTicketSearch]
     Verify elements is visible and displayed  //td[normalize-space()='${TICKET_ID}']
     Go Back to Home Page
@@ -546,6 +550,7 @@ Suspend Supplementary Plan
     Sleep  3s
     Click Item    ${ServiceDetailsPage}[YesButton]
     Handle PopUp   ${ServiceDetailsPage}[OrderPlacedSuccessfully]    Order Placed Successfully
+    Go Back to Home Page
 
 Update HLR Status
 
@@ -562,3 +567,4 @@ Update HLR Status
     Set Dropdown    ${ServiceDetailsPage}[HLRNewDeviceStatus]   ${NEW_DEVICE_STATUS}
     Set Dropdown    ${ServiceDetailsPage}[HLRStatusAction]      ${Action}
     Click Item    ${ServiceDetailsPage}[HLRStatusSubmitButton]
+    Go Back to Home Page

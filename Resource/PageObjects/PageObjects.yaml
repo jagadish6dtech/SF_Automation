@@ -51,7 +51,7 @@ CRMPage :
 
 
   HomePage:
-    HomeButton: "//a[@href='/crm-ui/home']"
+    HomeButton: "//a//span[text()='Dashboard']"
     #HomeButton: "//a[@href='/home']"
     HomeSearchBar: "//input[@class='MuiInputBase-input']"
     HomeSearchButton: "//span[@class='MuiIconButton-label']"
@@ -144,6 +144,7 @@ CRMPage :
     ViewTicketPriorityDropdown: "(//div[@class=' css-g1d714-ValueContainer'])[2]"
     InputTicketID: "//input[@id='ticketId']"
     ViewTicketSearch: "//button[text()='Search']"
+
 
     ChangeLifeCycle: "//a[@id='/crm-ui/profile/account/service/changeLifeCycle']"
     ChangeLifeCycleStatusDropdown: "(//div[@class=' css-g1d714-ValueContainer'])[1]"
