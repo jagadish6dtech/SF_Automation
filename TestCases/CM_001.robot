@@ -15,6 +15,9 @@ Variables    ../Resource/PageObjects/PageObjects.yaml
 Variables    ../Resource/PageObjects/TestData.yaml
 Resource     ../Resource/PageKeywords/Common.robot
 
+Library  OperatingSystem
+Suite Setup  Setup chromedriver
+
 Test Setup        Execute Suite Setup as User
 Test Teardown     Execute Suite Teardown
 
@@ -28,6 +31,10 @@ ${AccoutDetailPage}  ${CRMPage}[AccoutDetailPage]
 ${ServiceDetailsPage}  ${CRMPage}[ServiceDetailsPage]
 ${HomePage}  ${CRMPage}[HomePage]        # Importing Home page Components
 
+*** Keywords ***
+Setup chromedriver
+  Set Environment Variable  webdriver.chrome.driver  C:/Users/abhishek.jayalal/Desktop/Wakanda/20-06-2022/wkd_auto-20-06-2022/venv/Scripts/chromedriver.exe
+
 *** Test Cases ***
 TEST CASE 001
     [Documentation]     Sample TestCase For Automation FrameWork
@@ -35,30 +42,17 @@ TEST CASE 001
     NAVIGATE SSO UI  ${CRM_UI}
 #-----------------------------------------------------------------------------------------------
 
-    #Manage Profile Residential Address two  TC_001  TD_02           #completed 1
-    #Manage Profile Permanent Address two  TC_001  TD_02             #completed 1
-    #Manage Service Address One  TC_001  TD_01                       #completed 1
-    #Edit Profile Details two  TC_001  TD_01                        #Home page redirect issue
-    #Edit Service Details two  TC_001  TD_01                         #completed 1
-    #Edit Account Details two  TC_001  TD_01                         #completed 1
-    #Manage Account Address One  TC_001  TD_01                       #completed 1
-
-    #Add Supplementary Offer  TC_001  TD_01                          #SCREEN ISSUE - DATA SUBMISSION
-
-    #change SIM ID  TC_001  TD_01                                     #Vlidation failure
-    #Create Ticket  TC_001  TD_01                                     #Address auto populate changed
-    #Filter Ticket By Status Open    TC_001  TD_01                    #complete
-    #View Identification Details  TC_001  TD_01     #complete        1
+    Manage Profile Residential Address two  TC_001  TD_01           #completed 1
+    Manage Profile Permanent Address two  TC_001  TD_01             #completed 1
+    Manage Service Address One  TC_001  TD_01                      #completed 1
+    Edit Profile Details two  TC_001  TD_01                         #completed 1
+    Edit Service Details two  TC_001  TD_01                        #completed 1
+    Edit Account Details two  TC_001  TD_01                        #completed 1
+    Manage Account Address One  TC_001  TD_02                      #completed 1
+    View Identification Details  TC_001  TD_01     #complete        1
     Filter Ticket By Status Open    TC_001  TD_01  #complete        1
+    Create Ticket  TC_001  TD_01                                     #completed 1
 
-    #Alter Account State   TC_001  TD_03                              #complete
-    #View Document Details  TC_002  TD_01                              # validation pending
-    #Search Order By OrderId  TC_001  TD_01                           #close order screen pending
-
-    #Suspend Supplementary Plan  TC_001  TD_01
-    #Update HLR Status  TC_001  TD_01
-    #change SIM ID  TC_001  TD_01
-    #Sleep   10s
 
 
 

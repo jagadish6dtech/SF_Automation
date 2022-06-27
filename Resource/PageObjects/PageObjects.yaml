@@ -98,9 +98,11 @@ CRMPage :
     AddressComment: "//textarea[@id='addressComment']"
 
 
-    ManageSim: "//a[@href='/crm-ui/profile/account/service/changeSIM']"
+    ManageSim: "//a[normalize-space()='Manage SIM']"
+    #ManageSim: "//a[@href='/crm-ui/profile/account/service/changeSIM']"
     #ManageSim: "//a[@href='/profile/account/service/changeSIM']"
-    ChangeSimButton: "//button[@class='sc-bczRLJ ijpBYM']"
+    #ChangeSimButton: "//button[@class='sc-bczRLJ ijpBYM']"
+    ChangeSimButton: "//button[normalize-space()='Change SIM']"
     NewICCIDSimID: "(//input[@name='ICCID'])[1]"
 
     SimChangeReasonDropdown: "(//div[@class=' css-tlfecz-indicatorContainer'])[1]"
@@ -137,7 +139,16 @@ CRMPage :
     EmailInput: "//input[@id='emailAddressCreate']"
     Contact Number: "//input[@id='contactNumberCreate']"
     Descripion: "//textarea[@id='ticketDesc']"
+    Region: "//span[@id='select2-Address_Line_1-container']"
+    Zone: "//span[@id='select2-Address_Line_2-container']"
+    Woreda: "//span[@id='select2-Address_Line_4-container']"
+    Kebele: "//input[@id='Address_Line_5']"
+    HouseNumber: "//input[@id='Address_Line_6']"
+    StreetName: "//input[@id='Address_Line_7']"
+    PostCode: "//input[@id='Address_Line_8']"
+    POBoxNumber: "//input[@id='Address_Line_9']"
     Save: "//button[text()='Save']"
+    TicketCreationPopUp: "//div[starts-with(text(), 'Ticket ID : ')]"
 
     AdvanceSearchinViewTicket: "//span[text()='Advanced Search']"
     ViewTicketStatusDropdown: "(//div[@class=' css-g1d714-ValueContainer'])[1]"
@@ -173,7 +184,8 @@ CRMPage :
     AlternateContactInput: "(//input[@id='alternateContactNumber'])[2]"
     EditProfileSubmit: "//button[@form='edit-profile']"
     ManageProfile: "//div[text()='Profile']"
-    ManageProfileAddress: "//a[@href='/crm-ui/profile/profileAddress']"
+    ManageProfileAddress: "//a[normalize-space()='Address Details']"
+    #ManageProfileAddress: "//a[@href='/crm-ui/profile/profileAddress']"
     #ManageProfileAddress: "//a[@href='/profile/profileAddress']"
     #IdentificationDetails: "//a[@href='/profile/identificationDetails']"
     IdentificationDetails: "//a[@href='/crm-ui/profile/identificationDetails']"
@@ -208,7 +220,8 @@ CRMPage :
     Residential_AddressComment: "//textarea[@id='addressComment']"
     ResidentialAddressSubmit: "//button[text()='Submit']"
 
-    ViewDocumentDetails: "//a[@href='/crm-ui/profile/ViewDocument']"
+    #ViewDocumentDetails: "//a[@href='/crm-ui/profile/ViewDocument']"
+    ViewDocumentDetails: "//a[normalize-space()='Document']"
     InputDocumentID: "//input[@id='documentName']"
     DocumentSearch: "//button[normalize-space()='Search']"
 

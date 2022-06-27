@@ -144,6 +144,7 @@ Edit Account Details two
     ${contact}=  Generate random string        12     0123456789
     ${ITEMIZED_BILL_STATEMENT}=  getData  ${ACCOUNT}  ITEMIZED_BILL_STATEMENT
     ${DIRECT_DEBT}=  getData  ${ACCOUNT}  DIRECT_DEBT
+    ${EMAIL_NOTIFICATION}=  getData  ${ACCOUNT}  EMAIL_NOTIFICATION
 
     Search By ID  ${HomePage}[HomeSeachOptionAccountId]  ${ACCOUNT_ID}
     Click Item  ${AccoutDetailPage}[EditDetails]
@@ -152,8 +153,8 @@ Edit Account Details two
     Set Input  ${AccoutDetailPage}[ContactInput]  ${CONTACT_NO}
     Set Dropdown  ${AccoutDetailPage}[AccountManagerDropdown]  ${KEY_ACC_MANAGER}
     Set Dropdown  ${AccoutDetailPage}[BillMediumDropdown]  ${BILL_MEDIUM}
-    Set Slider  Itemized Bill Statement  NO
-    Set Slider  Email Notification  NO
+    Set Slider  Itemized Bill Statement  ${ITEMIZED_BILL_STATEMENT}
+    Set Slider  Email Notification  ${EMAIL_NOTIFICATION}
     Set Slider  Direct Debit  ${DIRECT_DEBT}
 
     IF    '${DIRECT_DEBT}' == 'YES'
@@ -455,7 +456,6 @@ Search Order By OrderId
 
 
 Create Ticket
-    [Documentation]    To Create new ticket
     [Arguments]     ${caseID}  ${dataID}
 
     ${data}=  Fetch From Excel  ${WKD_CRM_TESTDATA}   CREATE_TICKET  ${caseID}  ${dataID}
@@ -475,6 +475,14 @@ Create Ticket
     ${EMAIL}=  getData  ${data}       Email
     ${CONTACT_NUMBER}=  getData  ${data}   Contact_Number
     ${DESCRIPTION}=  getData  ${data}      Description
+    ${REGION}=  getData  ${data}  REGION
+    ${ZONE}=  getData  ${data}  ZONE
+    ${WOREDA}=  getData  ${data}  WOREDA
+    ${Union}=  getData  ${data}  UNION
+    ${HomeNo}=  getData  ${data}  HOME_NO
+    ${StreetNo}=  getData  ${data}  STREET_NO
+    ${POCode}=  getData  ${data}  PO_CODE
+    ${POBox}=  getData  ${data}  PO_BOX
 
     Search By ID      ${HomePage}[HomeSeachOptionServiceId]  ${SERVICE_ID}
     Click Item        ${ServiceDetailsPage}[ViewTickets]
@@ -486,7 +494,20 @@ Create Ticket
     Set Input         ${ServiceDetailsPage}[EmailInput]   ${EMAIL}
     Set Input         ${ServiceDetailsPage}[Contact Number]   ${CONTACT_NUMBER}
     Set Input         ${ServiceDetailsPage}[Descripion]     ${DESCRIPTION}
+    Set Dropdown2  ${ServiceDetailsPage}[Region]  ${REGION}
+    Set Dropdown2  ${ServiceDetailsPage}[Zone]  ${ZONE}
+    Set Input  ${ServiceDetailsPage}[Kebele]      ${Union}
+    Set Input  ${ServiceDetailsPage}[HouseNumber]      ${HomeNo}
+    Set Input  ${ServiceDetailsPage}[StreetName]      ${StreetNo}
+    Set Input  ${ServiceDetailsPage}[PostCode]      ${POCode}
+    Set Input  ${ServiceDetailsPage}[POBoxNumber]      ${POBox}
     Click Item        ${ServiceDetailsPage}[Save]
+    #Sleep  3s
+    #${TicketId}=  get text    ${ServiceDetailsPage}[TicketCreationPopUp]
+    #log to console   ${TicketId}
+
+
+
 
 
 Filter Ticket By Status Open
